@@ -3,6 +3,8 @@ const Constant = require("./constants")
 require("dotenv").config()
 const cors = require("cors")
 const mongoose = require("mongoose")
+const errorHandleMiddleware = require("./errors/error.middleware")
+require("express-async-errors")
 
 const app = express()
 
@@ -14,7 +16,6 @@ const PORT = process.env.PORT || 5000
 //import routes
 const UserRoute = require("./route/user.route")
 const Connection = require("./utils/connection")
-const errorHandleMiddleware = require("./errors/error.middleware")
 
 //use routes
 app.use(Constant.API.PREFIX.concat("/user"), UserRoute)

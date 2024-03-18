@@ -1,5 +1,6 @@
-const Response = require("../utils/response");
 const { StatusCodes } = require("http-status-codes")
+const Response = require("../utils/response")
+const { model } = require("mongoose")
 
 const errorHandleMiddleware = async (err, req, res, next) => {
     // console.log(err.StatusCodes)

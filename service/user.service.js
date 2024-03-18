@@ -31,6 +31,12 @@ const FindByUserStatus = async (obj) => {
     return await User.find(obj)
 }
 
+const FindUserByStatus = async (status) => {
+    return await User.findOne({
+        userStatus: status
+    })
+}
+
 module.exports = {
     SaveUser,
     FindByEmail,
@@ -38,5 +44,6 @@ module.exports = {
     UpdateUser,
     FindById,
     DeleteUser,
-    FindByUserStatus
+    FindByUserStatus,
+    FindUserByStatus
 }
