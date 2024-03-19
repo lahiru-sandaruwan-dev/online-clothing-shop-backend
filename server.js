@@ -16,9 +16,11 @@ const PORT = process.env.PORT || 5000
 //import routes
 const UserRoute = require("./route/user.route")
 const Connection = require("./utils/connection")
+const ProductRoute = require("./route/product.route")
 
 //use routes
 app.use(Constant.API.PREFIX.concat("/user"), UserRoute)
+app.use(Constant.API.PREFIX.concat("/product"), ProductRoute)
 app.use(errorHandleMiddleware)
 
 mongoose.set("strictQuery", true)
