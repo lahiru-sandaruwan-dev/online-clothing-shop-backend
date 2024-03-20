@@ -55,6 +55,7 @@ const updateProduct = async (req, res) => {
             product.productImage = body.productImage,
             product.size = body.size,
             product.productPrice = body.productPrice,
+            product.availableQuantity = body.availableQuantity,
             product.productColor = body.productColor
 
         const updateProduct = await productService.SaveProduct(product)

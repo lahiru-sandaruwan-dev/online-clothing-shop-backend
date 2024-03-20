@@ -10,6 +10,13 @@ const FindProductByName = async (productName) => {
     })
 }
 
+const FindProductByNameAndStatus = async (productName, productStatus) => {
+    return await Product.findOne({
+        productName: productName,
+        productStatus: productStatus
+    })
+}
+
 const FindProductByStatus = async (productStatus) => {
     return await Product.find({
         productStatus: productStatus
@@ -29,5 +36,6 @@ module.exports = {
     FindProductByName,
     FindProductByStatus,
     GetAllProducts,
-    GetProductById
+    GetProductById,
+    FindProductByNameAndStatus
 }

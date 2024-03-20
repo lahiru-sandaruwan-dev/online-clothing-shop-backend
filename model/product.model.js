@@ -33,6 +33,10 @@ const ProductSchema = mongoose.Schema({
         required: [true, "Product price is required!"],
         maxlength: [5, "Product price is shouldn't exceed more than 5 digits!"]
     },
+    availableQuantity: {
+        type: Number,
+        required: [true, "Product available qty is required!"],
+    },
     productColor: {
         type: String
     },
