@@ -12,7 +12,7 @@ const Constant = {
         LARGE: "L",
         EXTRA_LARGE: "XL",
         DOUBLE_EXCL: "XXL"
-    }
+    },
 }
 
 module.exports = Constant

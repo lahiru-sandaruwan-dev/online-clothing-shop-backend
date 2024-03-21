@@ -4,6 +4,10 @@ const SaveProductCart = async (obj) => {
     return await obj.save()
 }
 
+const UpdateProductCart = async (obj) => {
+    return await obj.save()
+}
+
 const FindProductByName = async (productName) => {
     return await ProductCart.findOne({
         productName: productName
@@ -23,9 +27,25 @@ const FindByUserId = async (userId) => {
     })
 }
 
+const FindById = async (id) => {
+    return await ProductCart.findById(id)
+}
+
+const UpdateCart = async (userId, obj) => {
+ return await ProductCart.findByIdAndUpdate(userId, obj)
+}
+
+const DeleteCartItem = async (id) => {
+    return await ProductCart.findByIdAndDelete(id)
+}
+
 module.exports = {
     SaveProductCart,
     FindProductByName,
     FindByUserId,
-    FindProductByNameAndUserId
+    FindProductByNameAndUserId,
+    UpdateCart,
+    UpdateProductCart,
+    DeleteCartItem,
+    FindById
 }
