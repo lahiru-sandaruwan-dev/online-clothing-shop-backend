@@ -18,14 +18,18 @@ const UserRoute = require("./route/user.route")
 const Connection = require("./utils/connection")
 const ProductRoute = require("./route/product.route")
 const ProductCartRoute = require("./route/productCart.route")
+const ProductCategoryRoute = require("./route/productCategory.route")
+const ProductTypeRoute = require("./route/productType.route")
 //use routes
 app.use(Constant.API.PREFIX.concat("/user"), UserRoute)
 app.use(Constant.API.PREFIX.concat("/product"), ProductRoute)
 app.use(Constant.API.PREFIX.concat("/productCart"), ProductCartRoute)
+app.use(Constant.API.PREFIX.concat("/productCategory"), ProductCategoryRoute)
+app.use(Constant.API.PREFIX.concat("/productType"), ProductTypeRoute)
+
 app.use(errorHandleMiddleware)
 
 mongoose.set("strictQuery", true)
-
 
 app.listen(PORT , () => {
     console.log(`Server is listing on port: ${PORT}`)
