@@ -23,9 +23,30 @@ const FindByNameAndCategory = async (productTypeName, categoryId) => {
     })
 }
 
+const FindProductTypes = async () => {
+    return await ProductType.find()
+}
+
+const FindById = async (productTypeId) => {
+    return await ProductType.findById(productTypeId)
+}
+
+const FindByIdAndUpdate = async (productTypeId, body) => {
+    return await ProductType.findByIdAndUpdate(productTypeId, body)
+}
+
+const DeleteType = async (productTypeId) => {
+    return await ProductType.findByIdAndDelete(productTypeId)
+}
+
+
 module.exports = {
     SaveType,
     FindByName,
     FindByCategoryId,
-    FindByNameAndCategory
+    FindByNameAndCategory,
+    FindProductTypes,
+    FindById,
+    FindByIdAndUpdate,
+    DeleteType
 }
