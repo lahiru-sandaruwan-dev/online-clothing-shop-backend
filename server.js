@@ -20,12 +20,14 @@ const ProductRoute = require("./route/product.route")
 const ProductCartRoute = require("./route/productCart.route")
 const ProductCategoryRoute = require("./route/productCategory.route")
 const ProductTypeRoute = require("./route/productType.route")
+const OrderRoute = require("./route/order.route")
 //use routes
 app.use(Constant.API.PREFIX.concat("/user"), UserRoute)
 app.use(Constant.API.PREFIX.concat("/product"), ProductRoute)
 app.use(Constant.API.PREFIX.concat("/productCart"), ProductCartRoute)
 app.use(Constant.API.PREFIX.concat("/productCategory"), ProductCategoryRoute)
 app.use(Constant.API.PREFIX.concat("/productType"), ProductTypeRoute)
+app.use(Constant.API.PREFIX.concat("/order"), OrderRoute)
 
 app.use(errorHandleMiddleware)
 
